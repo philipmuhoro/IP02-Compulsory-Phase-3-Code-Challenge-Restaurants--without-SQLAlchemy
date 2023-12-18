@@ -46,3 +46,19 @@ class Customer:
         review = Review(self, restaurant, rating)
         self.reviews.append(review)
         return review
+    
+     def restaurants(self):
+        # Method to get a list of all unique restaurants reviewed by this customer
+        return list(set(review.restaurant() for review in self.reviews))
+# Create customers
+customer1 = Customer("Philip", "Muhoro")
+customer2 = Customer("Linda", "Kimathi")
+customer3= Customer("Emma", "Wangui")
+customer3.given_name = "Emma"
+customer3.family_name = "Wangui"
+
+
+# Accessing information about customers
+print("Customer 1 Full Name:", customer1.full_name())
+print("Customer 2 Full Name:", customer2.full_name())
+print("Customer 3 Full Name:", customer3.full_name())
